@@ -1,4 +1,4 @@
-<form *ngIf="formEdit" [formGroup]="formEdit" class="pb-3" (ngSubmit)="(formEdit.dirty || dirty) && applySearch()">
+<form *ngIf="formEdit" [formGroup]="formEdit" class="pb-3 pl-3 pr-3" (ngSubmit)="(formEdit.dirty || dirty) && applySearch()">
     <div class="w-100 position-relative">
         <input #search  type="text" class="form-control" placeholder="Search for beer name" autocomplete="off" formControlName="search">
         <button class="btn btn-link btn-xs position-absolute" title="Clear" *ngIf="search.value"

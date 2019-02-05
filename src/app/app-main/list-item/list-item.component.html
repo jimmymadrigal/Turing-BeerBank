@@ -4,7 +4,7 @@
           <img [src]="content.image_url" class="img-fluid" />
           <h5 class="card-title">{{ content.name }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{ content.tagline }}</h6>
-          <button class="btn btn-link position-absolute" (click)="toggleFavorite()">
+          <button class="btn btn-link position-absolute" (click)="toggleFavorite(); $event.stopPropagation();" >
               <i class="far fa-star"
                 [class.fas]="content.favorite"
                 [class.text-warning]="content.favorite" ></i>

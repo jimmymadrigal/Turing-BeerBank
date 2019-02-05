@@ -1,5 +1,5 @@
 <div *ngIf="list$ | async as list" class="row">
   <div *ngFor="let element of list" class="col-xs-12 col-md-6 col-lg-4" >
-    <app-list-item [content]="element"  (dblclick)="open(element)"></app-list-item>
+    <app-list-item [content]="element"  (click)="open(element)"></app-list-item>
   </div>
 </div>
