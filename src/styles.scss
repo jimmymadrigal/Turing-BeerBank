@@ -3,7 +3,12 @@
 $body-bg: #eee;
 
 @import "~bootstrap/scss/bootstrap";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~@fortawesome/fontawesome-free/css/all.css";
+
+.text-upper{
+  text-transform: uppercase;
+}
 
 app-main {
   > header, > nav {
@@ -11,7 +16,45 @@ app-main {
   }
   > header{
     form {
-      width: 400px;
+      max-width: 400px;
+      margin: auto;
     }
   }
+}
+app-list-item {
+  .card{
+    transition: box-shadow .3s;
+    &:hover{
+      box-shadow: 0 0 21px rgba(0,0,0,.2);
+    }
+  }
+
+  img{
+    height: 100px !important;
+  }
+  h5{
+    color: $orange;
+  }
+  button.position-absolute{
+    top: 8px;
+    right: 8px;
+  }
+}
+app-detail {
+  h2, h4 {
+    color: $orange;
+  }
+  .properties{
+    position: relative;
+    &:before{
+      content:'';
+      position: absolute;
+      top:0;
+      left: 0;
+      background: purple;
+      width: 100px;
+      height: 5px;
+    }
+  }
+
 }

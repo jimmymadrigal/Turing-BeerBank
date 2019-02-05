@@ -1,0 +1,14 @@
+<div class="w-100 text-center p-3">
+    <div class="card w-100 position-relative">
+        <div class="card-body">
+          <img [src]="content.image_url" class="img-fluid" />
+          <h5 class="card-title">{{ content.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ content.tagline }}</h6>
+          <button class="btn btn-link position-absolute" (click)="toggleFavorite()">
+              <i class="far fa-star"
+                [class.fas]="content.favorite"
+                [class.text-warning]="content.favorite" ></i>
+          </button>
+        </div>
+      </div>
+</div>

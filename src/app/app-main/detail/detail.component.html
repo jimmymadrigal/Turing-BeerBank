@@ -1,0 +1,33 @@
+<div class="row" *ngIf="content">
+  <div class="col-3">
+    <img [src]="content.image_url" class="img-fluid" />
+  </div>
+  <div class="col-9">
+    <h2>{{ content.name }}</h2>
+    <h3 class="mb-2 text-muted">{{ content.tagline }}</h3>
+    <div class="properties mt-3 pt-3 pb-3">
+      <span class="pr-3">
+        <b>IBU: </b>{{ content.ibu }}</span>
+      <span class="pr-3">
+        <b>ABV: </b>{{ content.abv }}</span>
+      <span class="pr-3">
+        <b>EBC: </b>{{ content.ebc }}</span>
+    </div>
+    <p>{{ content.description }}</p>
+    <div *ngIf="content.food_pairing">
+      <h5>Best Served with</h5>
+      <ul>
+        <li *ngFor="let line of content.food_pairing">{{ line }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-12 pt-3">
+    <h4>You might also like</h4>
+  </div>
+  <div class="col-4">
+  </div>
+  <div class="col-4">
+  </div>
+  <div class="col-4">
+  </div>
+</div>
