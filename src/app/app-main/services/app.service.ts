@@ -15,7 +15,8 @@ export class AppService {
   list(filter: models.BeerFilterRequest) {
     var url = this.urlPrefix;
     if (filter) {
-      url += '?per_page=80&';
+      url += '?page='+filter.page+'&';
+      url += '?per_page='+filter.perPage+'&';
       if (filter.search)
         url += "beer_name=" + encodeURIComponent("" + filter.search) + "&";
       if (filter.advanced) {

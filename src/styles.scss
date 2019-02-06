@@ -9,15 +9,22 @@ $body-bg: #eee;
 .text-upper{
   text-transform: uppercase;
 }
-
+body, html{
+  height: 100%;
+  min-height: 100%;
+}
 app-main {
-  > header, > nav {
-    background: $orange;
-  }
-  > header{
-    form {
-      max-width: 400px;
-      margin: auto;
+  .main-container {
+    height: 100%;
+    min-height: 100%;
+    > header, > nav {
+      background: $orange;
+    }
+    > header{
+      form {
+        max-width: 400px;
+        margin: auto;
+      }
     }
   }
 }

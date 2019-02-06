@@ -18,6 +18,10 @@ export class MainComponent implements OnInit {
   }
 
   clearFilter() {
-    this.facade.list(new models.BeerFilterRequest())
+    this.facade.list(new models.BeerFilterRequest());
+  }
+  onScroll(){
+    // console.log('scroll');
+    this.facade.nextPage();
   }
 }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppMainRoutingModule } from './app-main-routing.module';
-import { AppCommonModule } from '../app-common/app-common.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatFormFieldModule, MatInputModule, MatDialogModule, MAT_DIALOG_DATA, MatDialogRef, MatDatepicker, MatDatepickerModule, MatNativeDateModule, MatAccordion, MatExpansionModule } from '@angular/material';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -26,7 +26,6 @@ import { DetailDialogComponent } from './detail-dialog/detail-dialog.component';
   imports: [
     CommonModule,
     AppMainRoutingModule,
-    AppCommonModule,
     HttpClientModule,
     StoreModule.forRoot(fromFeatureState.reducers, { metaReducers: fromFeatureState.metaReducers }),
     EffectsModule.forRoot([BeerEffects]),
@@ -42,6 +41,7 @@ import { DetailDialogComponent } from './detail-dialog/detail-dialog.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatExpansionModule,
+    InfiniteScrollModule
   ],
   declarations: [MainComponent, ListComponent, FavoriteComponent, DetailComponent, ListItemComponent, FilterComponent, DetailDialogComponent],
   exports: [

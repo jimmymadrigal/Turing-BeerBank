@@ -40,6 +40,7 @@ export class FilterComponent implements OnInit {
 
   applySearch() {
       this.filter = Object.assign(new models.BeerFilterRequest(), {...this.formEdit.value, advanced:this.advanced });
+      this.filter.page=1; // always start on 1
       this.facade.list(this.filter);
   }
 

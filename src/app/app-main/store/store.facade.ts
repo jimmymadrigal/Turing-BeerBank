@@ -22,6 +22,8 @@ export class StoreFacade {
     }
 
     public list(paging: models.BeerFilterRequest) { this.store.dispatch(new actions.List(paging)); }
+    public nextPage() {this.filter.page++; this.store.dispatch(new actions.List(this.filter)); }
+
 
     public addFavorite(payload: models.Beer) { this.store.dispatch(new actions.AddFavorite(payload)); }
     public removeFavorite(payload: models.Beer) { this.store.dispatch(new actions.RemoveFavorite(payload)); }

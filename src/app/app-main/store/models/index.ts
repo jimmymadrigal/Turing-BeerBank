@@ -96,6 +96,8 @@ export class BeerFilterRequest {
   brewedBefore: Date = null;
   brewedAfter: Date = null;
   advanced = false;
+  page = 1;
+  perPage = 25;
 
   constructor(){
     this.search = '';
