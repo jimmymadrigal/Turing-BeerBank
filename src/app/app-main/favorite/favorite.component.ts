@@ -20,7 +20,8 @@ export class FavoriteComponent implements OnInit {
 
   open(element: models.Beer) {
     const dialogRef = this.dialog.open(DetailDialogComponent, {
-      width: '800px',
+      width: '600px',
+      position: {top: '70px'},
       data: element
     });
 

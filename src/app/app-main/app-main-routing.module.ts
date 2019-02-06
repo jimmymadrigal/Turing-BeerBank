@@ -5,7 +5,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 
 const routes: Routes = [
   { path: '', component: ListComponent, data: { title: 'Home' } },
-  { path: 'favorite', component: FavoriteComponent, data: { title: 'Favorite' } },
+  { path: 'favourite', component: FavoriteComponent, data: { title: 'Favourite' } },
   { path: 'advanced', component: ListComponent, data: { title: 'Advanced' } },
 ];
 

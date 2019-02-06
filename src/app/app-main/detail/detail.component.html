@@ -4,8 +4,8 @@
       <img [src]="content.image_url" class="img-fluid" />
     </div>
     <div class="col-xs-12 col-md-9">
-      <h2>{{ content.name }}</h2>
-      <h3 class="mb-2 text-muted">{{ content.tagline }}</h3>
+      <h4><b>{{ content.name }}</b></h4>
+      <p class="mb-2 text-muted">{{ content.tagline }}</p>
       <div class="properties mt-3 pt-3 pb-3">
         <span class="pr-1">
           <b>IBU: </b>{{ content.ibu }}</span>
@@ -16,18 +16,18 @@
       </div>
       <p>{{ content.description }}</p>
       <div *ngIf="content.food_pairing">
-        <h5>Best Served with</h5>
+        <p><b>Best Served with</b></p>
         <ul>
           <li *ngFor="let line of content.food_pairing">{{ line }}</li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="row mt-3" *ngIf="content.similar && content.similar.length">
+  <div class="row mt-3 similar" *ngIf="content.similar && content.similar.length">
     <div class="col-12">
-      <h4>You might also like</h4>
+      <h5><b>You might also like:</b></h5>
     </div>
-    <div class="col-xs-12 col-md-4" *ngFor="let element of content.similar">
+    <div class="col-xs-12 col-md-4 pr-3 pl-3" *ngFor="let element of content.similar">
       <div class="card w-100 text-center">
         <div class="card-body">
           <img [src]="element.image_url" class="img-fluid img-small" />

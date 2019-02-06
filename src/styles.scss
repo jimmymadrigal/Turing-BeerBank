@@ -26,20 +26,33 @@ app-main {
         margin: auto;
       }
     }
+    > .container {
+      width: 700px;
+    }
   }
 }
 img.img-small{
   height: 100px !important;
 }
 app-list-item {
-  .card{
-    transition: box-shadow .3s;
-    &:hover{
+  padding-bottom: 1rem !important;
+  display: block;
+  height: 100%;
+
+  button.wrapper{
+    border: none;
+    background: none;
+    padding: 0;
+    &:hover, &:focus{
       box-shadow: 0 0 21px rgba(0,0,0,.2);
     }
   }
+  .card{
+    height: 100%;
+    transition: box-shadow .3s;
+  }
 
-  h5{
+  .card-title{
     color: $orange;
   }
   button.position-absolute{
@@ -48,7 +61,7 @@ app-list-item {
   }
 }
 app-detail {
-  h2, h4 {
+  h4, h5, h6 {
     color: $orange;
   }
   .properties{
@@ -62,6 +75,10 @@ app-detail {
       width: 100px;
       height: 5px;
     }
+  }
+  .similar .card {
+    border: solid 1px #999;
+    height: 100%;;
   }
 
 }

@@ -1,14 +1,12 @@
-<div class="w-100 text-center p-3">
-    <div class="card w-100 position-relative">
-        <div class="card-body">
-          <img [src]="content.image_url" class="img-fluid img-small" />
-          <h5 class="card-title">{{ content.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ content.tagline }}</h6>
-          <button class="btn btn-link position-absolute" (click)="toggleFavorite(); $event.stopPropagation();" >
-              <i class="far fa-star"
-                [class.fas]="content.favorite"
-                [class.text-warning]="content.favorite" ></i>
-          </button>
-        </div>
-      </div>
-</div>
+<button class="w-100 h-100 text-center d-block wrapper">
+  <div class="card w-100 position-relative">
+    <div class="card-body">
+      <img [src]="content.image_url" class="img-fluid img-small" />
+      <b class="card-title pt-3 d-block">{{ content.name }}</b>
+      <small class="card-subtitle mb-2 text-muted d-block ">{{ content.tagline }}</small>
+      <button class="btn btn-link position-absolute" (click)="toggleFavorite(); $event.stopPropagation();">
+        <i class="far fa-star" [class.fas]="content.favorite" [class.text-warning]="content.favorite"></i>
+      </button>
+    </div>
+  </div>
+</button>
