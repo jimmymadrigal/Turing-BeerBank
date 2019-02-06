@@ -93,6 +93,8 @@ export class BeerFilterRequest {
   maxIBU: number= null;
   minABV: number= null;
   maxABV: number= null;
+  minEBC: number= null;
+  maxEBC: number= null;
   brewedBefore: Date = null;
   brewedAfter: Date = null;
   advanced = false;

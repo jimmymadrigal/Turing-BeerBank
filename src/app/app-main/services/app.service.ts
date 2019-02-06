@@ -28,6 +28,10 @@ export class AppService {
           url += "ibu_gt=" + encodeURIComponent("" + filter.minIBU) + "&";
         if (filter.maxIBU !== null)
           url += "ibu_lt=" + encodeURIComponent("" + filter.maxIBU) + "&";
+          if (filter.minEBC !== null)
+            url += "ebc_gt=" + encodeURIComponent("" + filter.minEBC) + "&";
+          if (filter.maxEBC !== null)
+            url += "ebc_lt=" + encodeURIComponent("" + filter.maxEBC) + "&";
         if (filter.brewedBefore !== null)
           url += "brewed_before=" + encodeURIComponent(filter.brewedBefore ? "" + filter.brewedBefore.getMonth()+"-"+ filter.brewedBefore.getFullYear() : "") + "&";
         if (filter.brewedAfter !== null)
