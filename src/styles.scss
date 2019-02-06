@@ -21,6 +21,9 @@ app-main {
     }
   }
 }
+img.img-small{
+  height: 100px !important;
+}
 app-list-item {
   .card{
     transition: box-shadow .3s;
@@ -29,9 +32,6 @@ app-list-item {
     }
   }
 
-  img{
-    height: 100px !important;
-  }
   h5{
     color: $orange;
   }

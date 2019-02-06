@@ -15,7 +15,7 @@ export class DetailDialogComponent implements OnInit, OnDestroy {
 
   constructor(public dialogRef: MatDialogRef<DetailDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public content: models.Beer, private facade: StoreFacade, public dialog: MatDialog) {
-    dialogRef.disableClose = true;
+    //dialogRef.disableClose = true;
   }
   ngOnInit() {
   }

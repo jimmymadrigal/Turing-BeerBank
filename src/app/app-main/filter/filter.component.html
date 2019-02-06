@@ -1,10 +1,58 @@
 <form *ngIf="formEdit" [formGroup]="formEdit" class="pb-3 pl-3 pr-3" (ngSubmit)="(formEdit.dirty || dirty) && applySearch()">
-    <div class="w-100 position-relative">
-        <input #search  type="text" class="form-control" placeholder="Search for beer name" autocomplete="off" formControlName="search">
-        <button class="btn btn-link btn-xs position-absolute" title="Clear" *ngIf="search.value"
-          style="top:0;right:0;"
-          (click)="formEdit.controls.search.setValue('', { emitEvent: true })">
-            <i class="fas fa-times"></i>
-        </button>
-      </div>
+  <div class="w-100 position-relative">
+    <input #search type="text" class="form-control" placeholder="Search for beer name" autocomplete="off" formControlName="search">
+    <button class="btn btn-link btn-xs position-absolute" title="Clear" *ngIf="search.value" style="top:0;right:0;" (click)="formEdit.controls.search.setValue('', { emitEvent: true })">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <mat-accordion class="p-3 text-dark">
+      <mat-expansion-panel (afterCollapse)="advanced=false;  applySearch()" (afterExpand)="advanced=true;  applySearch()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Advanced Search
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <section >
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                <mat-form-field class="w-100">
+                  <input matInput type="number" placeholder="Min IBU" formControlName="minIBU">
+                </mat-form-field>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <mat-form-field class="w-100">
+                  <input matInput type="number" placeholder="Max IBU" formControlName="maxIBU">
+                </mat-form-field>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <mat-form-field class="w-100">
+                  <input matInput type="number" placeholder="Min ABV" formControlName="minABV">
+                </mat-form-field>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <mat-form-field class="w-100">
+                  <input matInput type="number" placeholder="Max ABV" formControlName="maxABV">
+                </mat-form-field>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <mat-form-field class="w-100">
+                  <input matInput [matDatepicker]="picker2" placeholder="Brewed after" formControlName="brewedAfter">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <mat-form-field class="w-100">
+                  <input matInput [matDatepicker]="picker1" placeholder="Brewed before" formControlName="brewedBefore">
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+          </section>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
 </form>

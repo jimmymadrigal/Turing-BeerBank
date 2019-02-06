@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AppMainRoutingModule } from './app-main-routing.module';
 import { AppCommonModule } from '../app-common/app-common.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatDialogModule, MAT_DIALOG_DATA, MatDialogRef, MatDatepicker, MatDatepickerModule, MatNativeDateModule, MatAccordion, MatExpansionModule } from '@angular/material';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
@@ -39,6 +39,9 @@ import { DetailDialogComponent } from './detail-dialog/detail-dialog.component';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatExpansionModule,
   ],
   declarations: [MainComponent, ListComponent, FavoriteComponent, DetailComponent, ListItemComponent, FilterComponent, DetailDialogComponent],
   exports: [

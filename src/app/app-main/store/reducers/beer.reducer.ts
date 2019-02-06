@@ -20,6 +20,13 @@ export function reducer(state = initialState, action: actions.BeerActions): Stat
 
     case actions.BeerActionTypes.ListSuccess:
       var list = action.payload;
+      for(let i=0; i<list.length; i++){
+        list[i].similar = [];
+        if(i-1 >= 0) list[i].similar.push(list[i-1]);
+        if(i+1 < list.length) list[i].similar.push(list[i+1]);
+        if(i+2 < list.length) list[i].similar.push(list[i+2]);
+
+      }
       // Refresh favorites with list objects
       var favorites = state.favorites.map(x=>{
         var exists = list.filter(y=>y.id==x.id);

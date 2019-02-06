@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreFacade } from '../store/store.facade';
+import { MatExpansionModule } from '@angular/material';
+import * as models from '../store/models';
 
 @Component({
   selector: 'app-main',
@@ -8,11 +10,14 @@ import { StoreFacade } from '../store/store.facade';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private store: StoreFacade) {
+  constructor(private facade: StoreFacade) {
 
    }
 
   ngOnInit() {
   }
 
+  clearFilter() {
+    this.facade.list(new models.BeerFilterRequest())
+  }
 }

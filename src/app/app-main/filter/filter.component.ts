@@ -11,7 +11,7 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
-
+  advanced = false;
   formEdit: FormGroup;
   filter: models.BeerFilterRequest;
   searchTextChanged = new Subject<string>();
@@ -39,7 +39,7 @@ export class FilterComponent implements OnInit {
   }
 
   applySearch() {
-      this.filter = Object.assign(new models.BeerFilterRequest(), this.formEdit.value);
+      this.filter = Object.assign(new models.BeerFilterRequest(), {...this.formEdit.value, advanced:this.advanced });
       this.facade.list(this.filter);
   }
 

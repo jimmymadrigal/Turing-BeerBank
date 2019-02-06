@@ -84,10 +84,19 @@ export class Beer {
     brewers_tips: string;
     contributed_by: string;
     favorite: boolean = false;
+    similar: Beer[];
 }
 
 export class BeerFilterRequest {
-  search: string;
+  search: string = '';
+  minIBU: number= null;
+  maxIBU: number= null;
+  minABV: number= null;
+  maxABV: number= null;
+  brewedBefore: Date = null;
+  brewedAfter: Date = null;
+  advanced = false;
+
   constructor(){
     this.search = '';
   }
